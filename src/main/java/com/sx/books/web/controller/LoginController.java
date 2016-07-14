@@ -66,11 +66,13 @@ public class LoginController {
     @RequestMapping("/logout")
     public void logout(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException{
         Cookie[] cookies = request.getCookies();
-        for (Cookie cookie:cookies
-             ) {
-            cookie.setMaxAge(0);
-            cookie.setPath("/");
-            response.addCookie(cookie);
+        if (cookies !=null) {
+            for (Cookie cookie : cookies
+                    ) {
+                cookie.setMaxAge(0);
+                cookie.setPath("/");
+                response.addCookie(cookie);
+            }
         }
         response.sendRedirect("/webapp/template/login");
     }

@@ -1,3 +1,4 @@
+com/sx/books/meta/Buy.class
 com/sx/books/meta/Content.class
 com/sx/books/web/controller/LoginController.class
 com/sx/books/dao/ContentDao.class

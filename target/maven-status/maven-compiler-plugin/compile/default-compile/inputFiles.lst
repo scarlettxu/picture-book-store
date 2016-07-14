@@ -3,6 +3,7 @@
 /Users/scarlettxu/Desktop/picture-book-store/src/main/java/com/sx/books/dao/LoginDao.java
 /Users/scarlettxu/Desktop/picture-book-store/src/main/java/com/sx/books/meta/Trx.java
 /Users/scarlettxu/Desktop/picture-book-store/src/main/java/com/sx/books/web/controller/LoginController.java
+/Users/scarlettxu/Desktop/picture-book-store/src/main/java/com/sx/books/meta/Buy.java
 /Users/scarlettxu/Desktop/picture-book-store/src/main/java/com/sx/books/service/impl/ContentService.java
 /Users/scarlettxu/Desktop/picture-book-store/src/main/java/com/sx/books/web/controller/ContentController.java
 /Users/scarlettxu/Desktop/picture-book-store/src/main/java/com/sx/books/dao/ContentDao.java

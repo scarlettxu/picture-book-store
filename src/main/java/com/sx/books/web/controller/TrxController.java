@@ -1,11 +1,13 @@
 package com.sx.books.web.controller;
 
+import com.sx.books.meta.Buy;
 import com.sx.books.meta.Product;
 import com.sx.books.meta.Trx;
 import com.sx.books.meta.User;
 import com.sx.books.service.impl.TrxService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -44,8 +46,7 @@ public class TrxController {
     }
 
     @RequestMapping("/api/buy")
-    @ResponseBody
-    public String buy(HttpSession session,@RequestParam("id") int contentId,@RequestParam("personId") int personId,@RequestParam("price") int price,ModelMap map) throws IOException,ServletException{
+    public String buy(HttpSession session, @RequestBody List<Buy> buyList, ModelMap map) throws IOException,ServletException{
         if (session.getAttribute("userName") !=null){
             System.out.println("session userName: "+session.getAttribute("userName"));
             User user = new User();
@@ -55,12 +56,17 @@ public class TrxController {
             System.out.println("user name: "+user.getUserName()+", user type: "+user.getUserType());
         }else map.addAttribute("user",null);
 
-        Trx trx = new Trx();
-        trx.setContentId(contentId);
-        trx.setPersonId(personId);
-        trx.setPrice(BigInteger.valueOf(price));
-        TrxService service = context.getBean("trxService",TrxService.class);
-        service.buy(trx);
+        for (Buy buy:buyList) {
+            System.out.println("buy: "+buy.toString());
+            Trx trx = new Trx();
+            trx.setContentId(buy.getId());
+            trx.setPersonId((Integer) session.getAttribute("id"));
+            trx.setPrice(buy.getPrice());
+            trx.setNum(buy.getNumber());
+            TrxService service = context.getBean("trxService",TrxService.class);
+            service.buy(trx);
+        }
+
 
         map.addAttribute("code",200);
         map.addAttribute("message","buy successful");

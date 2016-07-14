@@ -17,7 +17,7 @@
 
 	for(var i = 0; i < products.length; i++){
 		str = str + 
-		"<tr>" + 
+		"<tr>" +
 		"<td>" + products[i].title  + "</td>"+
 		"<td>" + 
 		"<span class=\"lessNum\">"+ "-" + "</span>" +
@@ -59,7 +59,7 @@
 	var layer = new Layer();
 	$('Account').onclick = function(e){
 		var newProducts = products.map(function(arr){
-			return {'id':arr.id,'number':arr.num};
+			return {'id':arr.id,'number':arr.num,'price':arr.price};
 		});
 		console.log(newProducts);
 		var ele = e.target;

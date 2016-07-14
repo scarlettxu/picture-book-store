@@ -11,8 +11,16 @@ public class Trx {
     private int contentId;
     private int personId;
     private BigInteger price;
+    private int num;
     private Timestamp time;
 
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
 
     public int getId() {
         return id;
