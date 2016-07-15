@@ -10,7 +10,7 @@ public class Trx {
     private int id;
     private int contentId;
     private int personId;
-    private BigInteger price;
+    private double price;
     private int num;
     private Timestamp time;
 
@@ -46,11 +46,11 @@ public class Trx {
         this.personId = personId;
     }
 
-    public BigInteger getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(BigInteger price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

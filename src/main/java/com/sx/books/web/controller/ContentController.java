@@ -10,13 +10,16 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.List;
@@ -87,7 +90,7 @@ public class ContentController {
     }
 
     @RequestMapping(value = "/publicSubmit",method = RequestMethod.POST)
-    public String publishSubmit(HttpSession session,@RequestParam("title") String title, @RequestParam("summary") String abst, @RequestParam("image") String icon, @RequestParam("price") int price, @RequestParam("detail") String text, HttpServletResponse response,ModelMap map) throws IOException,ServletException{
+    public String publishSubmit(HttpSession session,@RequestParam("title") String title, @RequestParam("summary") String abst, @RequestParam("image") String icon, @RequestParam("price") double price, @RequestParam("detail") String text, HttpServletResponse response,ModelMap map) throws IOException,ServletException{
         if (session.getAttribute("userName") !=null){
             System.out.println("session userName: "+session.getAttribute("userName"));
             User user = new User();
@@ -105,7 +108,7 @@ public class ContentController {
             content.setTitle(title);
             content.setAbst(abst);
             content.setIcon(icon);
-            content.setPrice(BigInteger.valueOf(price));
+            content.setPrice(price);
             content.setText(text);
 
             ContentService service = context.getBean("contentService",ContentService.class);
@@ -131,7 +134,7 @@ public class ContentController {
     }
 
     @RequestMapping("/editSubmit")
-    public String editSubmit(HttpSession session,@RequestParam("title") String title, @RequestParam("summary") String abst, @RequestParam("image") String icon, @RequestParam("price") int price, @RequestParam("detail") String text, @RequestParam("id") int id, HttpServletResponse response,ModelMap map) throws IOException,ServletException{
+    public String editSubmit(HttpSession session,@RequestParam("title") String title, @RequestParam("summary") String abst, @RequestParam("image") String icon, @RequestParam("price") double price, @RequestParam("detail") String text, @RequestParam("id") int id, HttpServletResponse response,ModelMap map) throws IOException,ServletException{
         if (session.getAttribute("userName") !=null){
             System.out.println("session userName: "+session.getAttribute("userName"));
             User user = new User();
@@ -145,7 +148,7 @@ public class ContentController {
         content.setTitle(title);
         content.setAbst(abst);
         content.setIcon(icon);
-        content.setPrice(BigInteger.valueOf(price));
+        content.setPrice(price);
         content.setText(text);
         content.setId(id);
 
@@ -171,6 +174,23 @@ public class ContentController {
         Product content = service.show(id);
         map.addAttribute("product",content);
         return "edit";
+    }
+
+    @RequestMapping("/api/upload")
+    public String upload(@RequestParam("file")MultipartFile file,ModelMap model,HttpSession session) throws IOException,ServletException{
+        if (!file.isEmpty()){
+            try{
+                String filePath = session.getServletContext().getRealPath("/")+"image/"+file.getOriginalFilename();
+                file.transferTo(new File(filePath));
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            String imagePath = "image/"+file.getOriginalFilename();
+            model.addAttribute("result",imagePath);
+            model.addAttribute("code",200);
+            model.addAttribute("message","Image Upload Successful");
+        }
+        return "upload";
     }
 
     @RequestMapping("/api/delete")

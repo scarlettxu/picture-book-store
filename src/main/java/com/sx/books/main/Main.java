@@ -52,7 +52,7 @@ public class Main {
         content.setTitle("安的种子");
         content.setAbst("等待的智慧");
         content.setIcon("http://18731036777.davdian.com/1032.html");
-        content.setPrice(BigInteger.valueOf(204));
+        content.setPrice(204);
         content.setText("《安的种子》以本、静与安三个小和尚为叙述线索，讲述了一个有关大自然规律的寓言故事。本书文字精准而乾脆利落，图像简纯而突显人物性格，像急躁的本、刻意经营的静与泰然的安。此外，文图结合所展示的说故事魅力，更令人击赏。");
 
 //        contentService.publish(content);
@@ -60,7 +60,7 @@ public class Main {
         contentService.edit(content);
 
         Trx trx =  new Trx();
-        trx.setPrice(BigInteger.valueOf(204));
+        trx.setPrice(204);
         trx.setContentId(3);
         trx.setPersonId(2);
         trxService.buy(trx);

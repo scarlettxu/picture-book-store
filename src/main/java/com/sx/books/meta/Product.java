@@ -11,8 +11,8 @@ public class Product {
     private int id;
     private String title;
     private String summary;
-    private BigInteger price;
-    private BigInteger buyPrice;
+    private double price;
+    private double buyPrice;
     private String image;
     private int buyNum;
     private boolean isBuy;
@@ -60,19 +60,19 @@ public class Product {
         this.summary = summary;
     }
 
-    public BigInteger getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(BigInteger price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public BigInteger getBuyPrice() {
+    public double getBuyPrice() {
         return buyPrice;
     }
 
-    public void setBuyPrice(BigInteger buyPrice) {
+    public void setBuyPrice(double buyPrice) {
         this.buyPrice = buyPrice;
     }
 

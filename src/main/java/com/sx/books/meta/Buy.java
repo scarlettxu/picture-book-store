@@ -9,13 +9,13 @@ public class Buy {
 
     private int id;
     private int number;
-    private BigInteger price;
+    private double price;
 
-    public BigInteger getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(BigInteger price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

@@ -8,7 +8,7 @@ import java.math.BigInteger;
 public class Content {
 
     private int id;
-    private BigInteger price;
+    private double price;
     private String title;
     private String icon;
     private String abst;
@@ -22,11 +22,11 @@ public class Content {
         this.id = id;
     }
 
-    public BigInteger getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(BigInteger price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

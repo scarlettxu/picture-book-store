@@ -58,7 +58,7 @@ public class ContentService {
     }
 
     private void fillProduct(Product product){
-        if (product.getBuyPrice()!=null) {
+        if (product.getBuyPrice()!=0) {
             product.setBuy(true);
             product.setSell(true);
             product.setBuyNum(1);
