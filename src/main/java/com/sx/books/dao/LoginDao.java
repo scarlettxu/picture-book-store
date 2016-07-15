@@ -17,7 +17,7 @@ public interface LoginDao {
             @Result(property = "password",column = "password"),
             @Result(property = "userType",column = "userType")
     })
-    @Select("select id,userName,password,userType from person where userName=#{userName} and password=#{password}")
+    @Select("select id,userName,password,userType from person where userName=#{userName} and password=#{password} limit 1")
     public User login(@Param("userName") String userName, @Param("password") String password);
 
 }

@@ -44,7 +44,7 @@ public interface ContentDao {
             @Result(property = "detail",column = "text"),
             @Result(property = "buyPrice",column = "buyPrice")
     })
-    @Select("select c.id,c.price,c.title,c.icon,c.abstract,c.text,t.price as buyPrice from content c left join trx t on c.id=t.contentId where c.title=#{title}")
+    @Select("select c.id,c.price,c.title,c.icon,c.abstract,c.text,t.price as buyPrice from content c left join trx t on c.id=t.contentId where c.title=#{title} limit 1")
     public Product searchByTitle(@Param("title") String title);
 
     @Insert("insert into content(price,title,icon,abstract,text) values (#{price},#{title},#{icon},#{abst},#{text})")

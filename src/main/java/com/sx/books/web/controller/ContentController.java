@@ -194,7 +194,12 @@ public class ContentController {
     }
 
     @RequestMapping("/api/delete")
-    public void delete()throws IOException,ServletException{
-
+    public String delete(@RequestParam("id") int id,ModelMap map)throws IOException,ServletException{
+        ContentService service = context.getBean("contentService",ContentService.class);
+        service.delete(id);
+        map.addAttribute("code",200);
+        map.addAttribute("message","Delete Successful");
+        map.addAttribute("result",true);
+        return "delete";
     }
 }
