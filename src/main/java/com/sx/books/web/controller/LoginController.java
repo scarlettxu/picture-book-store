@@ -34,8 +34,15 @@ public class LoginController {
         loginUser.setUserName(userName);
         loginUser.setPassword(password);
 
-        LoginService service = context.getBean("loginService",LoginService.class);
-        User user=service.login(loginUser);
+        User user= null;
+        try {
+            LoginService service = context.getBean("loginService",LoginService.class);
+            user=service.login(loginUser);
+        }catch (Exception e){
+            e.printStackTrace();
+            response.sendError(500,e.getLocalizedMessage());
+        }
+
 
         if (user!=null) {
             System.out.println("get user from db, user name: "+user.getUserName()+", user type: "+user.getUserType());
@@ -59,7 +66,7 @@ public class LoginController {
     }
 
     @RequestMapping("/login")
-    public String login(ModelMap map) throws IOException,ServletException{
+    public String login() throws IOException,ServletException{
         return "login";
     }
 
