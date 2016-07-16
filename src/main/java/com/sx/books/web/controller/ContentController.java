@@ -218,15 +218,17 @@ public class ContentController {
     @RequestMapping("/api/upload")
     public String upload(@RequestParam("file")MultipartFile file,ModelMap model,HttpSession session,HttpServletResponse response) throws IOException,ServletException{
         if (!file.isEmpty()){
-            try{
-                String filePath = session.getServletContext().getRealPath("/")+"image/"+file.getOriginalFilename();
-                file.transferTo(new File(filePath));
+
+//              String filePath = session.getServletContext().getRealPath("/")+"image/"+file.getOriginalFilename();
+            String fileName = System.currentTimeMillis()+file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
+            String filePath = session.getServletContext().getRealPath("/")+"image/"+fileName;
+            try{file.transferTo(new File(filePath));
             }catch (Exception e){
                 e.printStackTrace();
                 response.sendError(500,e.getLocalizedMessage());
             }
 
-            String imagePath = "/webapp/image/"+file.getOriginalFilename();
+            String imagePath = "/webapp/image/"+fileName;
             model.addAttribute("result",imagePath);
             model.addAttribute("code",200);
             model.addAttribute("message","Image Upload Successful");

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b8a66f0-56ce-4852-a984-9c9bf35eb15f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sx/books/web/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sx/books/web/controller/LoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sx/books/web/controller/ContentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sx/books/web/controller/ContentController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" />
     </list>
     <ignored path="picture-book-store.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,10 +38,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrxController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TrxController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sx/books/web/controller/TrxController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3846154">
+            <state vertical-scroll-proportion="0.0">
               <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding />
             </state>
@@ -71,14 +72,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContentController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ContentController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sx/books/web/controller/ContentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.740741">
-              <caret line="244" column="34" selection-start-line="244" selection-start-column="31" selection-end-line="244" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.30176565">
+              <caret line="222" column="137" selection-start-line="222" selection-start-column="137" selection-end-line="222" selection-end-column="137" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dispatcher-servlet.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.833334">
+              <caret line="46" column="51" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,7 +143,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/js/settleAccount.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/freemarker/account.ftl" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sx/books/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sx/books/service/impl/ContentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sx/books/meta/Trx.java" />
@@ -142,8 +152,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sx/books/dao/LoginDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sx/books/dao/ContentDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sx/books/web/controller/TrxController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sx/books/web/controller/ContentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sx/books/web/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sx/books/web/controller/ContentController.java" />
       </list>
     </option>
   </component>
@@ -1078,14 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.25">
-          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sx/books/meta/Trx.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71014494">
@@ -1223,16 +1226,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sx/books/web/controller/ContentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.740741">
-          <caret line="244" column="34" selection-start-line="244" selection-start-column="31" selection-end-line="244" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sx/books/web/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5185184">
@@ -1245,9 +1238,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sx/books/web/controller/TrxController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3846154">
+        <state vertical-scroll-proportion="0.0">
           <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.833334">
+          <caret line="46" column="51" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sx/books/web/controller/ContentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30176565">
+          <caret line="222" column="137" selection-start-line="222" selection-start-column="137" selection-end-line="222" selection-end-column="137" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
