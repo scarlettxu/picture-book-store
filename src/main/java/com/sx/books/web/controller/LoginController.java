@@ -56,8 +56,8 @@ public class LoginController {
             map.addAttribute("result",true);
         }
         else {
-            map.addAttribute("code",404);
-            map.addAttribute("message","Login Fail");
+            map.addAttribute("code",400);
+            map.addAttribute("message","Login Fail! User name or password incorrect.");
             map.addAttribute("result",false);
         }
 //        response.sendRedirect("/webapp/template/");
